@@ -21,6 +21,11 @@ img/              Bilder
 - **Keine externen Ressourcen.** Keine Google Fonts, kein CDN, kein Tracking.
   Die Seite laedt nichts von fremden Servern. Deshalb ist auch kein
   Cookie-Banner noetig.
+- **Blaupalette.** Auf Wunsch der Praxis ausschliesslich Blautoene, von
+  Marineblau (#16324f) bis zu sehr hellem Blaugrau (#eef3f8). Alle Farben
+  liegen als CSS-Variablen im `:root`-Block von `css/style.css` - eine
+  Farbanpassung braucht nur dort geaendert zu werden. Saemtliche
+  Text-Hintergrund-Kombinationen erfuellen WCAG AA (mindestens 4.5:1).
 - **Systemschriften.** Serifenschrift fuer Ueberschriften, Systemschrift fuer
   Fliesstext. Faellt sauber zurueck, wenn eine Schrift fehlt.
 - **Kontaktformular ohne Funktion.** Die Felder sind `disabled`, es gibt kein

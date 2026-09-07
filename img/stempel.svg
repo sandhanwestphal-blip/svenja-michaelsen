@@ -12,7 +12,7 @@
     Die Angaben unten pruefen und ggf. um die Heilpraktikererlaubnis
     oder eine Steuernummer ergaenzen.
   -->
-  <g fill="#1f3a2e">
+  <g fill="#16324f">
 
     <!-- Bildmarke, auf 130 x 130 skaliert, linksbuendig -->
     <g transform="translate(14,25) scale(1.30)">
@@ -23,7 +23,7 @@
                M50.00,50.00 L60.20,55.60 L80.00,50.00 Z
                M50.00,50.00 L39.80,44.40 L20.00,50.00 Z"/>
       <path d="M50,14.5 C42.0,24.0 38.6,33.0 38.6,39.5 C38.6,45.0 43.5,48.6 50,50 Z"/>
-      <g fill="none" stroke="#1f3a2e" stroke-width="2.2" stroke-linejoin="round">
+      <g fill="none" stroke="#16324f" stroke-width="2.2" stroke-linejoin="round">
         <path d="M50.00,50.00 L50.00,81.00 L55.60,60.54 Z
                  M50.00,50.00 L80.00,50.00 L60.20,44.40 Z
                  M50.00,50.00 L20.00,50.00 L39.80,55.60 Z"/>
