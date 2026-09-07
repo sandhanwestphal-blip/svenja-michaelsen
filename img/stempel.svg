@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 470 180"
+     width="47mm" height="18mm" role="img"
+     aria-label="Praxisstempel Naturheilpraxis Svenja Michaelsen">
+  <title>Praxisstempel Naturheilpraxis Svenja Michaelsen</title>
+  <!--
+    Praxisstempel, Abdruckflaeche 47 x 18 mm (passt in Trodat Printy 4912
+    und baugleiche Gehaeuse). Einfarbig, keine Verlaeufe.
+    Duennste Linie 0.45 mm.
+
+    VOR ABGABE BEIM STEMPELHERSTELLER:
+    Schrift in Pfade wandeln (Inkscape: Pfad > Objekt in Pfad umwandeln).
+    Die Angaben unten pruefen und ggf. um die Heilpraktikererlaubnis
+    oder eine Steuernummer ergaenzen.
+  -->
+  <g fill="#1f3a2e">
+
+    <!-- Bildmarke, auf 130 x 130 skaliert, linksbuendig -->
+    <g transform="translate(14,25) scale(1.30)">
+      <path d="M50,2.8 A47.2,47.2 0 1,0 50,97.2 A47.2,47.2 0 1,0 50,2.8 Z
+               M50,8.6 A41.4,41.4 0 1,1 50,91.4 A41.4,41.4 0 1,1 50,8.6 Z"
+            fill-rule="evenodd"/>
+      <path d="M50.00,50.00 L44.40,60.54 L50.00,81.00 Z
+               M50.00,50.00 L60.20,55.60 L80.00,50.00 Z
+               M50.00,50.00 L39.80,44.40 L20.00,50.00 Z"/>
+      <path d="M50,14.5 C42.0,24.0 38.6,33.0 38.6,39.5 C38.6,45.0 43.5,48.6 50,50 Z"/>
+      <g fill="none" stroke="#1f3a2e" stroke-width="2.2" stroke-linejoin="round">
+        <path d="M50.00,50.00 L50.00,81.00 L55.60,60.54 Z
+                 M50.00,50.00 L80.00,50.00 L60.20,44.40 Z
+                 M50.00,50.00 L20.00,50.00 L39.80,55.60 Z"/>
+        <path d="M50,14.5 C58.0,24.0 61.4,33.0 61.4,39.5 C61.4,45.0 56.5,48.6 50,50 Z"/>
+      </g>
+      <circle cx="50" cy="50" r="3.4"/>
+    </g>
+
+    <!-- Trennlinie -->
+    <rect x="166" y="26" width="4.5" height="128"/>
+
+    <!-- Angaben -->
+    <text x="190" y="52" font-family="Georgia, 'Book Antiqua', serif"
+          font-size="30" letter-spacing=".4">Svenja Michaelsen</text>
+    <text x="191" y="79" font-family="Arial, Helvetica, sans-serif"
+          font-size="19" letter-spacing="2.4">HEILPRAKTIKERIN</text>
+    <text x="191" y="115" font-family="Arial, Helvetica, sans-serif"
+          font-size="20">Lürsweg 44 · 45239 Essen</text>
+    <text x="191" y="143" font-family="Arial, Helvetica, sans-serif"
+          font-size="20">Telefon 0201 946 11 946</text>
+
+  </g>
+</svg>
