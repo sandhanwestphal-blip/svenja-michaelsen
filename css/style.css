@@ -1,0 +1,291 @@
+/* =========================================================
+   Naturheilpraxis Svenja Michaelsen
+   Relaunch-Entwurf 2026 - reines HTML/CSS, keine externen
+   Ressourcen (keine Google Fonts, kein CDN, kein Tracking).
+   ========================================================= */
+
+:root {
+  --gruen-900: #1f3a2e;
+  --gruen-700: #2f5d47;
+  --gruen-500: #4a7c62;
+  --gruen-100: #dde8e1;
+  --gruen-050: #eef4f0;
+
+  --sand-100: #f6f1e9;
+  --sand-200: #eadfd0;
+  --terra:    #a8623f;
+
+  --text:     #24302b;
+  --text-mut: #5c6b64;
+  --linie:    #d9e2dc;
+  --weiss:    #ffffff;
+  --grund:    #fbfaf7;
+
+  --serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+  --breite: 1120px;
+  --radius: 14px;
+  --schatten: 0 1px 2px rgba(31,58,46,.05), 0 8px 24px rgba(31,58,46,.06);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+body {
+  margin: 0;
+  background: var(--grund);
+  color: var(--text);
+  font-family: var(--sans);
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 { font-family: var(--serif); font-weight: 600; line-height: 1.2; color: var(--gruen-900); margin: 0 0 .5em; }
+h1 { font-size: clamp(2.1rem, 5vw, 3.2rem); letter-spacing: -.01em; }
+h2 { font-size: clamp(1.6rem, 3.2vw, 2.1rem); }
+h3 { font-size: 1.2rem; }
+p  { margin: 0 0 1.1em; }
+a  { color: var(--gruen-700); }
+img { max-width: 100%; height: auto; display: block; }
+
+.wrap { width: 100%; max-width: var(--breite); margin-inline: auto; padding-inline: 1.25rem; }
+.eng  { max-width: 680px; }
+
+/* --- Sprungmarke fuer Tastatur/Screenreader --- */
+.skip {
+  position: absolute; left: -9999px; top: 0;
+  background: var(--gruen-900); color: #fff; padding: .75rem 1.25rem; z-index: 200;
+}
+.skip:focus { left: 0; }
+
+:focus-visible { outline: 3px solid var(--terra); outline-offset: 3px; border-radius: 4px; }
+
+/* =================== Kopfbereich =================== */
+.topbar {
+  background: var(--gruen-900); color: var(--gruen-100);
+  font-size: .875rem; padding: .5rem 0;
+}
+.topbar .wrap { display: flex; flex-wrap: wrap; gap: .4rem 1.75rem; justify-content: center; }
+.topbar a { color: var(--gruen-100); text-decoration: none; }
+.topbar a:hover { text-decoration: underline; }
+
+.kopf {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(251,250,247,.94);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--linie);
+}
+.kopf .wrap { display: flex; align-items: center; justify-content: space-between; gap: 1rem; min-height: 76px; }
+
+.marke { display: flex; align-items: center; gap: .75rem; text-decoration: none; color: var(--gruen-900); }
+.marke img { width: 44px; height: 44px; border-radius: 50%; }
+.marke b { font-family: var(--serif); font-size: 1.05rem; font-weight: 600; display: block; line-height: 1.25; }
+.marke span { font-size: .78rem; color: var(--text-mut); letter-spacing: .08em; text-transform: uppercase; }
+
+.menue { display: flex; gap: .35rem; list-style: none; margin: 0; padding: 0; align-items: center; }
+.menue a {
+  display: block; padding: .55rem .85rem; border-radius: 999px;
+  text-decoration: none; color: var(--text); font-size: .96rem;
+}
+.menue a:hover { background: var(--gruen-050); color: var(--gruen-900); }
+.menue a[aria-current="page"] { background: var(--gruen-100); color: var(--gruen-900); font-weight: 600; }
+
+.knopf {
+  display: inline-block; padding: .8rem 1.5rem; border-radius: 999px;
+  background: var(--gruen-700); color: #fff; text-decoration: none;
+  font-weight: 600; font-size: .96rem; border: 1px solid var(--gruen-700);
+  transition: background .18s ease, transform .18s ease;
+}
+.knopf:hover { background: var(--gruen-900); border-color: var(--gruen-900); }
+.knopf.hell { background: transparent; color: var(--gruen-900); border-color: var(--gruen-500); }
+.knopf.hell:hover { background: var(--gruen-050); }
+.knopf.weiss { background: #fff; color: var(--gruen-900); border-color: #fff; }
+.knopf.weiss:hover { background: var(--sand-100); border-color: var(--sand-100); }
+
+/* =================== Hero =================== */
+.hero {
+  background:
+    radial-gradient(ellipse 70% 90% at 88% 10%, var(--gruen-100) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 80% at 5% 90%, var(--sand-200) 0%, transparent 55%),
+    var(--sand-100);
+  padding: clamp(3.5rem, 9vw, 6.5rem) 0;
+  border-bottom: 1px solid var(--linie);
+}
+.hero .eng { max-width: 760px; }
+.heroduo { display: grid; gap: clamp(2rem, 5vw, 4rem); align-items: center; grid-template-columns: 1fr; }
+@media (min-width: 900px) { .heroduo { grid-template-columns: 1fr 340px; } }
+.herotext { max-width: 620px; }
+
+.herobild { margin: 0; position: relative; justify-self: center; }
+.herobild img {
+  width: 100%; max-width: 340px; aspect-ratio: 5 / 6; object-fit: cover; object-position: 50% 22%;
+  border-radius: 200px 200px var(--radius) var(--radius);
+  box-shadow: 0 18px 48px rgba(31,58,46,.16);
+  filter: saturate(1.04) contrast(1.03);
+}
+.herobild figcaption {
+  position: absolute; left: 50%; bottom: -.9rem; transform: translateX(-50%);
+  background: var(--weiss); border: 1px solid var(--gruen-100);
+  border-radius: 999px; padding: .5rem 1.25rem; white-space: nowrap;
+  font-family: var(--serif); color: var(--gruen-900); font-size: .98rem;
+  box-shadow: var(--schatten);
+}
+.herobild figcaption span {
+  display: block; font-family: var(--sans); font-size: .7rem; letter-spacing: .12em;
+  text-transform: uppercase; color: var(--text-mut); font-weight: 600; margin-top: -.15rem;
+}
+@media (max-width: 899px) { .herobild { margin-top: 1rem; } .herobild img { max-width: 260px; } }
+.hero .augen {
+  display: inline-block; margin-bottom: 1.25rem; padding: .3rem .9rem;
+  background: rgba(255,255,255,.7); border: 1px solid var(--gruen-100);
+  border-radius: 999px; font-size: .82rem; letter-spacing: .1em;
+  text-transform: uppercase; color: var(--gruen-700); font-weight: 600;
+}
+.hero p.lead { font-size: 1.2rem; color: var(--text-mut); max-width: 56ch; }
+.hero .aktionen { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.75rem; }
+
+/* =================== Abschnitte =================== */
+section { padding: clamp(3rem, 7vw, 5rem) 0; }
+section.hell { background: var(--weiss); border-block: 1px solid var(--linie); }
+section.dunkel { background: var(--gruen-900); color: var(--gruen-100); }
+section.dunkel h2 { color: #fff; }
+
+.kopfzeile { max-width: 62ch; margin-bottom: 2.5rem; }
+.kopfzeile p { color: var(--text-mut); margin-bottom: 0; }
+.uebertitel {
+  display: block; font-size: .8rem; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--gruen-500); font-weight: 700; margin-bottom: .6rem;
+}
+
+/* --- Merkmale --- */
+.merkmale { display: grid; gap: 1.5rem; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+.merkmal { padding: 1.6rem; background: var(--weiss); border: 1px solid var(--linie); border-radius: var(--radius); }
+.merkmal h3 { margin-bottom: .35rem; }
+.merkmal p { margin: 0; color: var(--text-mut); font-size: .97rem; }
+.merkmal .zeichen { font-size: 1.5rem; line-height: 1; margin-bottom: .8rem; display: block; }
+
+/* --- Therapie-Karten --- */
+.karten { display: grid; gap: 1.25rem; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); list-style: none; margin: 0; padding: 0; }
+.karte { background: var(--weiss); border: 1px solid var(--linie); border-radius: var(--radius); overflow: hidden; transition: box-shadow .2s ease, transform .2s ease; }
+.karte:hover { box-shadow: var(--schatten); transform: translateY(-3px); }
+.karte a { display: block; text-decoration: none; color: inherit; height: 100%; }
+.karte img { aspect-ratio: 1 / 1; object-fit: cover; width: 100%; }
+.karte .inhalt { padding: 1.1rem 1.2rem 1.3rem; }
+.karte h3 { font-size: 1.05rem; margin-bottom: .3rem; }
+.karte p { margin: 0; font-size: .9rem; color: var(--text-mut); }
+.karte .pfeil { color: var(--gruen-500); font-weight: 600; font-size: .88rem; margin-top: .7rem; display: block; }
+
+/* --- Zwei Spalten --- */
+.duo { display: grid; gap: clamp(2rem, 5vw, 3.5rem); align-items: center; grid-template-columns: 1fr; }
+@media (min-width: 820px) { .duo { grid-template-columns: 340px 1fr; } .duo.gedreht { grid-template-columns: 1fr 340px; } }
+.duo img { border-radius: var(--radius); box-shadow: var(--schatten); }
+
+/* --- Therapie-Detailbloecke --- */
+.therapie { padding: 2.25rem 0; border-top: 1px solid var(--linie); scroll-margin-top: 100px; }
+.therapie:first-of-type { border-top: 0; }
+.therapie .duo { align-items: start; }
+@media (min-width: 820px) { .therapie .duo { grid-template-columns: 260px 1fr; } }
+.therapie img { border-radius: var(--radius); }
+
+/* --- Ablauf-Schritte --- */
+.schritte { list-style: none; counter-reset: s; margin: 0; padding: 0; display: grid; gap: 1.25rem; }
+.schritte li { counter-increment: s; padding-left: 3.4rem; position: relative; }
+.schritte li::before {
+  content: counter(s); position: absolute; left: 0; top: -.15rem;
+  width: 2.35rem; height: 2.35rem; border-radius: 50%;
+  background: var(--gruen-100); color: var(--gruen-900);
+  display: grid; place-items: center; font-weight: 700; font-family: var(--serif);
+}
+.schritte h3 { margin-bottom: .2rem; font-size: 1.05rem; }
+.schritte p { margin: 0; color: var(--text-mut); font-size: .97rem; }
+
+/* --- Hinweis-Kasten --- */
+.hinweis {
+  background: var(--gruen-050); border: 1px solid var(--gruen-100);
+  border-left: 4px solid var(--gruen-500);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: 1.25rem 1.5rem; font-size: .95rem;
+}
+.hinweis :last-child { margin-bottom: 0; }
+.hinweis.entwurf { background: #fdf4e8; border-color: #f0dcc0; border-left-color: var(--terra); }
+
+/* --- Linkliste --- */
+.linkliste { list-style: none; margin: 0; padding: 0; display: grid; gap: .6rem; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+.linkliste a {
+  display: block; padding: .85rem 1.1rem; background: var(--weiss);
+  border: 1px solid var(--linie); border-radius: 10px; text-decoration: none;
+}
+.linkliste a:hover { border-color: var(--gruen-500); background: var(--gruen-050); }
+.linkliste b { display: block; color: var(--gruen-900); }
+.linkliste span { font-size: .85rem; color: var(--text-mut); }
+
+/* =================== Kontakt =================== */
+.kontaktgitter { display: grid; gap: clamp(2rem, 5vw, 3.5rem); grid-template-columns: 1fr; }
+@media (min-width: 880px) { .kontaktgitter { grid-template-columns: 340px 1fr; } }
+
+.daten { margin: 0 0 2rem; padding: 0; display: grid; gap: 1.25rem; }
+.daten dt { font-size: .78rem; letter-spacing: .12em; text-transform: uppercase; color: var(--gruen-500); font-weight: 700; margin-bottom: .15rem; }
+.daten dd { margin: 0; }
+.daten a { color: var(--gruen-900); }
+
+form { display: grid; gap: 1.1rem; }
+.feld { display: grid; gap: .35rem; }
+.feld label { font-weight: 600; font-size: .92rem; }
+.feld .opt { font-weight: 400; color: var(--text-mut); }
+input, textarea, select {
+  font: inherit; font-size: 1rem; color: var(--text);
+  padding: .8rem .95rem; border: 1px solid var(--linie); border-radius: 10px;
+  background: var(--weiss); width: 100%;
+}
+input:focus, textarea:focus { border-color: var(--gruen-500); }
+textarea { min-height: 160px; resize: vertical; }
+input:disabled, textarea:disabled, button:disabled {
+  background: #f2f1ee; color: #8a938e; cursor: not-allowed;
+}
+.zweispaltig { display: grid; gap: 1.1rem; grid-template-columns: 1fr; }
+@media (min-width: 560px) { .zweispaltig { grid-template-columns: 1fr 1fr; } }
+button.knopf { font-family: inherit; cursor: pointer; }
+.pflichtnote { font-size: .85rem; color: var(--text-mut); margin: 0; }
+
+/* =================== Aufruf-Band =================== */
+.band { text-align: center; }
+.band p { color: var(--gruen-100); max-width: 52ch; margin-inline: auto; font-size: 1.1rem; }
+.band .aktionen { display: flex; flex-wrap: wrap; gap: .75rem; justify-content: center; margin-top: 1.75rem; }
+.band a.tel { color: #fff; font-family: var(--serif); font-size: clamp(1.4rem,3.5vw,2rem); text-decoration: none; display: inline-block; margin-top: .5rem; }
+.band a.tel:hover { text-decoration: underline; }
+
+/* =================== Fuss =================== */
+.fuss { background: var(--gruen-900); color: var(--gruen-100); padding: 3rem 0 2rem; font-size: .93rem; }
+.fuss a { color: var(--gruen-100); }
+.fussgitter { display: grid; gap: 2rem; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+.fuss h3 { color: #fff; font-size: .82rem; letter-spacing: .12em; text-transform: uppercase; font-family: var(--sans); font-weight: 700; margin-bottom: .9rem; }
+.fuss ul { list-style: none; margin: 0; padding: 0; display: grid; gap: .5rem; }
+.fussnote {
+  margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,.15);
+  display: flex; flex-wrap: wrap; gap: .5rem 1.5rem; justify-content: space-between;
+  font-size: .85rem; color: rgba(255,255,255,.65);
+}
+.disclaimer { font-size: .8rem; color: rgba(255,255,255,.55); max-width: 75ch; margin-top: 1rem; }
+
+/* =================== Rechtstexte =================== */
+.rechtstext { max-width: 760px; }
+.rechtstext h2 { font-size: 1.35rem; margin-top: 2.5rem; }
+.rechtstext h3 { font-size: 1.05rem; margin-top: 1.75rem; }
+.rechtstext ul, .rechtstext ol { padding-left: 1.3rem; }
+.rechtstext li { margin-bottom: .45rem; }
+
+/* =================== Mobil =================== */
+@media (max-width: 780px) {
+  .kopf .wrap { flex-wrap: wrap; min-height: 0; padding-block: .85rem; }
+  .menue { width: 100%; justify-content: flex-start; overflow-x: auto; gap: .15rem; padding-bottom: .15rem; }
+  .menue a { padding: .5rem .7rem; white-space: nowrap; }
+  .kopf .knopf { display: none; }
+}
+@media print {
+  .kopf, .topbar, .band, .fuss nav { display: none; }
+  body { background: #fff; }
+}
