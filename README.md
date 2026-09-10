@@ -7,7 +7,7 @@ keine Abhängigkeiten. Zum Bearbeiten genügt ein Texteditor.
 
 ```
 index.html        Startseite
-therapien.html    Alle 10 Behandlungen auf einer Seite (mit Sprungmarken)
+therapien.html    Alle 8 Behandlungsschwerpunkte auf einer Seite (mit Sprungmarken)
 ueber-mich.html   Person, Arbeitsweise, Zusammenarbeit, Kosten, Links
 kontakt.html      Kontaktdaten und Formular (ohne Funktion)
 impressum.html    Impressum (Entwurf, Pflichtangaben teils offen)
