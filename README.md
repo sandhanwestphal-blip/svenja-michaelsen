@@ -32,6 +32,8 @@ img/              Bilder
   `action`-Ziel. Nichts wird uebertragen oder gespeichert.
 - **Zugaenglichkeit.** Sprungmarke zum Inhalt, sichtbarer Fokus, semantische
   Ueberschriftenhierarchie, Alt-Texte, `prefers-reduced-motion` beruecksichtigt.
+- **Webgestaltung im Impressum.** Der Hinweis auf Sandhan Design mit Website,
+  E-Mail-Adresse und Telefonnummer bleibt Bestandteil des Impressums.
 
 ## Offene Punkte
 
