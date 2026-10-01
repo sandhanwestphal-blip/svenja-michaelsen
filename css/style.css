@@ -187,6 +187,15 @@ section.dunkel h2 { color: #fff; }
 @media (min-width: 820px) { .therapie .duo { grid-template-columns: 260px 1fr; } }
 .therapie img { border-radius: var(--radius); }
 
+/* --- Elvari Kristallmatte --- */
+.elvari-layout { display: grid; gap: clamp(2rem, 5vw, 3.5rem); align-items: start; }
+.elvari-bilder { display: grid; gap: 1rem; grid-template-columns: 1fr 1fr; }
+.elvari-bilder img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; box-shadow: var(--schatten); }
+@media (min-width: 820px) {
+  .elvari-layout { grid-template-columns: 360px 1fr; }
+  .elvari-bilder { grid-template-columns: 1fr; }
+}
+
 /* --- Ablauf-Schritte --- */
 .schritte { list-style: none; counter-reset: s; margin: 0; padding: 0; display: grid; gap: 1.25rem; }
 .schritte li { counter-increment: s; padding-left: 3.4rem; position: relative; }
