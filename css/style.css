@@ -82,7 +82,9 @@ img { max-width: 100%; height: auto; display: block; }
 .kopf .wrap { display: flex; align-items: center; justify-content: space-between; gap: 1rem; min-height: 76px; }
 
 .marke { display: flex; align-items: center; gap: .75rem; text-decoration: none; color: var(--blau-900); }
-.marke img { width: 44px; height: 44px; border-radius: 50%; }
+/* Die Windrose traegt die Himmelsrichtungen ausserhalb des Rings -
+   deshalb kein border-radius, sonst werden N/O/S/W beschnitten. */
+.marke img { width: 50px; height: 50px; }
 .marke b { font-family: var(--serif); font-size: 1.05rem; font-weight: 600; display: block; line-height: 1.25; }
 .marke span { font-size: .78rem; color: var(--text-mut); letter-spacing: .08em; text-transform: uppercase; }
 
