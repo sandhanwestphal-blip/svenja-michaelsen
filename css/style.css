@@ -257,6 +257,10 @@ input:disabled, textarea:disabled, button:disabled {
 @media (min-width: 560px) { .zweispaltig { grid-template-columns: 1fr 1fr; } }
 button.knopf { font-family: inherit; cursor: pointer; }
 .pflichtnote { font-size: .85rem; color: var(--text-mut); margin: 0; }
+.einwilligung { display: grid; grid-template-columns: 1.15rem 1fr; gap: .65rem; align-items: start; font-size: .88rem; }
+.einwilligung input { width: 1.15rem; height: 1.15rem; margin: .15rem 0 0; }
+.einwilligung label { font-weight: 400; }
+.honigtopf { position: absolute !important; left: -10000px !important; width: 1px; height: 1px; overflow: hidden; }
 .routenlinks { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.5rem; }
 
 /* =================== Aufruf-Band =================== */

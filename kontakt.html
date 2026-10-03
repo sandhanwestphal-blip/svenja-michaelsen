@@ -84,41 +84,46 @@
         <div id="formular">
           <h2>Nachricht schreiben</h2>
 
-          <div class="hinweis">
-            <p><strong>Das Kontaktformular wird derzeit eingerichtet.</strong> Bitte nutzen Sie vorerst Telefon oder E-Mail.</p>
-          </div>
-
-          <form aria-describedby="formhinweis">
+          <form action="index.php" method="post" accept-charset="UTF-8" aria-describedby="formhinweis">
+            <div class="honigtopf" aria-hidden="true">
+              <label for="website">Website</label>
+              <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+            </div>
             <div class="zweispaltig">
               <div class="feld">
                 <label for="name">Name *</label>
-                <input type="text" id="name" name="name" autocomplete="name" disabled>
+                <input type="text" id="name" name="name" autocomplete="name" maxlength="100" required>
               </div>
               <div class="feld">
                 <label for="telefon">Telefon <span class="opt">(optional)</span></label>
-                <input type="tel" id="telefon" name="telefon" autocomplete="tel" disabled>
+                <input type="tel" id="telefon" name="telefon" autocomplete="tel" maxlength="50">
               </div>
             </div>
 
             <div class="feld">
               <label for="email">E-Mail *</label>
-              <input type="email" id="email" name="email" autocomplete="email" disabled>
+              <input type="email" id="email" name="email" autocomplete="email" maxlength="150" required>
             </div>
 
             <div class="feld">
               <label for="betreff">Betreff *</label>
-              <input type="text" id="betreff" name="betreff" disabled>
+              <input type="text" id="betreff" name="betreff" maxlength="150" required>
             </div>
 
             <div class="feld">
               <label for="nachricht">Ihre Nachricht *</label>
-              <textarea id="nachricht" name="nachricht" disabled></textarea>
+              <textarea id="nachricht" name="nachricht" maxlength="5000" required></textarea>
             </div>
 
             <p class="pflichtnote" id="formhinweis">* Pflichtfeld. Bitte senden Sie über dieses Formular keine Gesundheitsdaten oder Diagnosen – solche Angaben besprechen wir persönlich.</p>
 
+            <div class="einwilligung">
+              <input type="checkbox" id="datenschutz-einwilligung" name="datenschutz_einwilligung" value="ja" required>
+              <label for="datenschutz-einwilligung">Ich habe die <a href="datenschutz.html#kontaktformular" target="_blank">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Angaben zur Bearbeitung meiner Anfrage zu. *</label>
+            </div>
+
             <div>
-              <button type="submit" class="knopf" disabled>Nachricht senden</button>
+              <button type="submit" class="knopf">Nachricht senden</button>
             </div>
           </form>
         </div>
